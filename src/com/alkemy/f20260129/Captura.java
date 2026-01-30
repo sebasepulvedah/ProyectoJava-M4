@@ -15,6 +15,7 @@ public class Captura {
 		
 		System.out.println("Bienvenido/a: " + nombre + " " +apellido);
 		System.out.printf("Hola %s" , nombre);
+		sc.close();
 	}
 
 }
