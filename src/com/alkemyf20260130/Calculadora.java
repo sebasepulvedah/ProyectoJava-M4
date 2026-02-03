@@ -1,4 +1,4 @@
-package com.alkemy.f20260202;
+package com.alkemyf20260130;
 
 import java.util.Scanner;
 
@@ -7,17 +7,7 @@ public class Calculadora {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		// Menu Calculadora
-		System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
-		System.out.println("▄▄▄▄Calculadora▄▄▄▄");
-		System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
-		System.out.println("0* Salir*");
-		System.out.println("1* Sumar*");
-		System.out.println("2* Restar*");
-		System.out.println("3* Multiplicar*");
-		System.out.println("4* Dividir*");
-		System.out.println("5* Resto*");
-		System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+		menu();
 		
 		System.out.println("Ingresa el numero de tu opción: ");
 		if(sc.hasNextInt()) { // letras controladas, strings.
@@ -31,7 +21,7 @@ public class Calculadora {
 			switch (opcion) {
 			case 1: //sumar
 				
-				int suma = 0;
+				int suma = suma();
 				
 				System.out.println("Ingrese cantidad de numeros a sumar");
 				int cantidad = sc.nextInt();
@@ -105,13 +95,40 @@ public class Calculadora {
 			System.out.println("Opción invalida");
 			
 		}
+		sc.close();
 		//Selección por parte del usuario.
 		}
 
-	
+	public static void menu() {
+	// Menu Calculadora
+	System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+	System.out.println("▄▄▄▄Calculadora▄▄▄▄");
+	System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
+	System.out.println("0* Salir*");
+	System.out.println("1* Sumar*");
+	System.out.println("2* Restar*");
+	System.out.println("3* Multiplicar*");
+	System.out.println("4* Dividir*");
+	System.out.println("5* Resto*");
+	System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
 	}	
+	public static int suma() {
+		Scanner sc = new Scanner(System.in);
 		
-		// Ingreso de datos 2
+		int suma_total = 0;
+		System.out.println("Ingrese cantidad de numeros a sumar");
+		int cantidad = sc.nextInt();
+		
+		for (int i = 1; i <= cantidad ; i++) {
+			System.out.printf("Ingresa el %d numero%n",i);
+			int numero = sc.nextInt();
+			//suma += numero;
+			suma_total  = suma_total+ numero; // suma = 0 + 1
+		}
+			
+			return suma_total;
+	}
+}		// Ingreso de datos 2
 		
 		// repetitivo
 		
