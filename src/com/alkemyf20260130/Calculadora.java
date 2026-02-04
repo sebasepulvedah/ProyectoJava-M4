@@ -95,7 +95,6 @@ public class Calculadora {
 			System.out.println("Opción invalida");
 			
 		}
-		sc.close();
 		//Selección por parte del usuario.
 		}
 

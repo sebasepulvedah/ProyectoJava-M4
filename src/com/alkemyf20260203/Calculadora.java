@@ -1,4 +1,4 @@
-package com.alkemy.f20260202;
+package com.alkemyf20260203;
 
 import java.util.Scanner;
 
@@ -180,11 +180,7 @@ public class Calculadora {
 		
 		
 	}
-}		// Ingreso de datos 2
-		
-		// repetitivo
-		
-		// switch case , variables, if else, for y while
+}		
 		
 		  
 		
