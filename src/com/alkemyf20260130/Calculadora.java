@@ -3,22 +3,28 @@ package com.alkemyf20260130;
 import java.util.Scanner;
 
 public class Calculadora {
-
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		
-		Scanner sc = new Scanner(System.in);
+	
+		boolean continuar = true;
+		while(continuar) {
+		
+	
 		menu();
+		
 		
 		System.out.println("Ingresa el numero de tu opción: ");
 		if(sc.hasNextInt()) { // letras controladas, strings.
-		int opcion = sc.nextInt();
-		if(opcion == 0) { // el 0 ya esta controlado.
+		int opcionMenu = sc.nextInt();
+		if(opcionMenu == 0) { // el 0 ya esta controlado.
 			System.out.println("Vuelve pronto....");
 			
-		}else if(opcion < 0 || opcion > 5) {
+		}else if(opcionMenu < 0 || opcionMenu > 5) {
 			System.err.println("Opcion Invalida");
+	
 		}else { //opcion del 1 al 5		
-			switch (opcion) {
+			switch (opcionMenu) {
 			case 1: //sumar
 				
 				int suma = suma();
@@ -77,27 +83,25 @@ public class Calculadora {
 				}	
 					System.out.println("El resultado es " + multiplicacion);
 				break;
-			case 4:
-				int numero6 = sc.nextInt();
-				break;
-			case 5:
-				int numero7 = sc.nextInt();
-				break;
 		default:
 				break;
 				
 			}
 		}
-		System.out.println("Quieren continuar con otra operación...");
-		System.out.println("Opción 1) si");
-		System.out.println("Opción 2) no");
+		
+		
 		}else {
 			System.out.println("Opción invalida");
 			
 		}
+	
 		//Selección por parte del usuario.
 		}
 
+	
+	}
+	
+	
 	public static void menu() {
 	// Menu Calculadora
 	System.out.println("¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶");
@@ -127,7 +131,9 @@ public class Calculadora {
 			
 			return suma_total;
 	}
-}		// Ingreso de datos 2
+}
+	
+// Ingreso de datos 2
 		
 		// repetitivo
 		
