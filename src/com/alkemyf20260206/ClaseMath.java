@@ -48,7 +48,13 @@ public class ClaseMath {
 		//forma general
 		System.out.println((int)  (Math.random() * 10)); // 0 al 9
 		System.out.println((int)  (Math.random() * 10) + 1); // 1 al 10
+		System.out.println((int)  (Math.random() * 11) + 5); // 5 al 15
 		System.out.println((int)  (Math.random() * 21) - 10); // -10 ,10
+		
+		// ejercicio 
+		// el sistema genera un numero aletorio dentro de un rango
+		// el usuario trata de adivinarlo, el sistema entrega pista de cercania max o min
+		// contar cuantos ingresos hizo.
 		
 	}
 
