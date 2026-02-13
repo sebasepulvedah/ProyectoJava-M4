@@ -1,5 +1,6 @@
 package cl.veterinaria;
 
+import cl.veterinaria.clases.Animal;
 import cl.veterinaria.clases.Conejo;
 import cl.veterinaria.clases.Gato;
 import cl.veterinaria.clases.Mascota;
@@ -20,31 +21,60 @@ public class Main {
 		//animal.comer();
 		
 		Perro perro = new Perro("Lobito", 11, "San Bernardo");
-		System.out.println(perro.toString());
+		System.out.println(perro); // se puede ocupar sin tostring ya que automaticamente lo detecta..
 		perro.comer();
 		
-		Gato gato = new Gato("Juanito",7);
-		gato.comer();
+		Gato gato = new Gato("Juanito",7); //objeto gato. 
+		gato.comer(); // se llama metodo comer, heredado de la clase animal pero sobrescrito en la clase gato.
 		System.out.println(gato.toString());
 		System.out.println();
 		System.out.println("********POLIMORFISMO*********");
 		/*Polimorfismo*/
 		// asignacion {;
 		//mascotas se comportaran de manera global
-		Mascota[] mascotas = new Mascota[] {
-				new Conejo(),
-				new Pez()
+		Animal[] mascotas = new Animal[] { // clase interface mascota implements. se definen metodos independientes. accion que se espera a realizar.
+				new Conejo(null,0),
+				new Pez(null,0)
 		};
 		//recorrer el array
-		for (Mascota mascota : mascotas) {
+		for (Animal mascota : mascotas) {
 			System.out.println(mascota.hacerRuido());
 			mascota.comer();
 			mascota.moverse();
 			//las clases abstractas no se pueden intanciar, solo definicion de metodos.
 			
+		//polimorfismo downCasting
+		Mascota conejin = (Mascota) new Conejo("conejin",20);
+		conejin.comer();
+		//conejin.dormir(); esto no se puede hacer si no esta en la interface.
+		//downCasting
+		Conejo wonejo = (Conejo) conejin; // trabajamos desde la interface hacia la clase.
+		wonejo.dormir();
+		
+		Mascota pezcadin = (Mascota) new Pez("Morin",0.2);
+		pezcadin.comer();
+		Pez pescadin = (Pez) pezcadin;
+		pescadin.dormir();
+		
+		//Pez pescadito = (Pez) conejin; //castException
+		/**
+		/* InstanceOf
+		if(conejin instanceof Pez pez) {
+			pescadito.hacerRuido();
+		} else {
+			System.out.println("No es un pez");
+		}
+		*/
+		
+		/*¨IntanceOf*/
+		if(pezcadin instanceof Pez pez)
+			pescadin.hacerRuido();
+		 else {
+			System.out.println("No es un pez");
+			
 		}
 	
 	}
 	
-	
+	}
 }

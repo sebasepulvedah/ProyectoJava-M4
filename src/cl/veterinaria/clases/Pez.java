@@ -4,7 +4,16 @@ package cl.veterinaria.clases;
  * POLIMORFISMO
  */
 
-public class Pez implements Mascota {
+public class Pez extends Animal{
+
+	private String raza;
+	
+	public Pez(String nombre, double peso) {
+		super(nombre, peso);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 
 	@Override
 	public String hacerRuido() {
@@ -24,6 +33,8 @@ public class Pez implements Mascota {
 		
 	}
 
-	
+	public void dormir() {
+		System.out.println("A veces duerme 3 horas y otras veces nada :D");
+	}
 
 }

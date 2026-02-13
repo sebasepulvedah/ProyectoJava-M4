@@ -1,14 +1,11 @@
 package cl.veterinaria.clases;
 
-/**
- * Interfaz para definir metodos.
- * no hay herencia de por medioo
- */
+public interface AnimalBase {
 
-public interface Mascota {
-	
 	String hacerRuido();//definir un metodo. 
 	void comer();
 	void moverse();
+	void dormir();
+	
 	
 }
